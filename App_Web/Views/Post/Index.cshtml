@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="~/Views/Shared/_BlogPost.cshtml" />
+<section id="post">
+    <div class="row">
+        <div class="col-6">    <h4>List of Post</h4></div>
+        <div class="col-6">
+            <input type="text" placeholder="search posts..." class="form-control" v-model="postName" @@change="GetbyPostName(postName)"/>
+        </div>
+    </div>
+
+    <hr />
+
+    <div v-for="(data,index) in PostList">
+        <div class="row" style="color:darkturquoise;font-weight:bold;background:aliceblue">
+            <div class="col-4 border-dark">{{data.name}}</div>
+            <div class="col-2">{{data.postedBy}}</div>
+            <div class="col-2">{{ChangeDateFormate(data.date)}}</div>
+            <div class="col-2">{{data.feedbacks.length}} <span v-if="data.feedbacks.length>1">Comments</span><span v-if="data.feedbacks.length<=1">Comment</span></div>
+        </div>
+
+        <blog-post v-for="feedbacks in data.feedbacks" v-bind:key="feedbacks.id" v-bind:data="feedbacks"></blog-post>
+
+    </div>
+</section>
+@section Scripts{
+    <script>
+        let vm = new Vue({
+            el: '#post',
+            data: {
+                PostList: [],
+                postName:''
+            },
+            methods: {
+                ChangeDateFormate(value) {
+                    if (value == null || value == "" || value == NaN) {
+                        return "";
+                    }
+                    else {
+                        return moment(String(value)).format('DD MMM YYYY');
+                    }
+                },
+                GetAllPosts() {
+                    axios.get(appsetting.apiurl + 'api/posts').then(response => {
+                        this.PostList = response.data;
+                        console.log(response.data);
+                    });
+                },
+                GetbyPostName(name) {
+                    axios.get(appsetting.apiurl + 'api/posts/'+name).then(response => {
+                        this.PostList = response.data;
+                        console.log(response.data);
+                    });
+                },
+            },
+            mounted() {
+                this.GetAllPosts();
+            }
+        });
+    </script>
+}

@@ -1,0 +1,10 @@
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\bin\Debug\netcoreapp3.1\App_Core.deps.json
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\bin\Debug\netcoreapp3.1\App_Core.runtimeconfig.json
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\bin\Debug\netcoreapp3.1\App_Core.runtimeconfig.dev.json
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\bin\Debug\netcoreapp3.1\App_Core.dll
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\bin\Debug\netcoreapp3.1\App_Core.pdb
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\obj\Debug\netcoreapp3.1\App_Core.AssemblyInfoInputs.cache
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\obj\Debug\netcoreapp3.1\App_Core.AssemblyInfo.cs
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\obj\Debug\netcoreapp3.1\App_Core.dll
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\obj\Debug\netcoreapp3.1\App_Core.pdb
+C:\Real_Project\BS3Test\FeedbackCollection\App_Core\obj\Debug\netcoreapp3.1\App_Core.csprojAssemblyReference.cache
